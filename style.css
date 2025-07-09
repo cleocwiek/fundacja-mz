@@ -1,0 +1,114 @@
+:root {
+  --yellow: #ffda36;
+  --black: #000000;
+  --white: #f8f7f1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+header {
+  background-color: var(--yellow);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.menu-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100vh;
+  background-color: var(--yellow);
+  padding: 2rem;
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.menu.open {
+  right: 0;
+}
+
+.hero {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1rem;
+}
+
+.project {
+  margin: 2rem 0;
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project p {
+  padding: 1rem;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .project {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 3rem 1rem;
+  }
+
+  .project:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .project img {
+    width: 50%;
+  }
+
+  .project p {
+    width: 50%;
+    font-size: 1.2rem;
+  }
+}
