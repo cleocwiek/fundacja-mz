@@ -29,7 +29,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .container {
@@ -95,7 +95,7 @@ header {
 }
 
 .hero {
-  padding: 2rem 1rem;
+  padding: 1rem;
   justify-content: left;
   padding-left: 20px;
 }
@@ -110,8 +110,8 @@ header {
 
 .hero-description {
   background: white;
-  padding: 1.5rem;
-  margin: 1.5rem 1rem 0 1rem;
+  padding: 1rem;
+  margin: 0.5rem 0.5rem 0.2rem 0.5rem;
   border-radius: 12px;
   max-width: 700px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -128,13 +128,14 @@ header {
 
 .scroll-arrow {
   text-align: center;
-  margin: 0.5rem 0;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
   animation: bounce 2s infinite;
 }
 
 .arrow-icon {
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
   fill: #000; /* Or var(--black) */
   cursor: pointer;
 }
@@ -220,6 +221,18 @@ header {
 
   .hero-description p {
     font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .hero-description {
+    margin: 1rem 0.5rem 0 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
