@@ -29,6 +29,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .container {
@@ -38,10 +39,31 @@ header {
 }
 
 .logo {
-  font-weight: 800;
-  font-size: 1rem;
+  height: 50px;
   padding: 5px;
   padding-left: 25px;
+  padding-right: 25px;
+}
+
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space between logo and icons */
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  color: var(--black);
+  font-size: 1.3rem;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: #444;
 }
 
 .menu-toggle {
@@ -80,10 +102,10 @@ header {
 
 .hero-logo {
   width: 80%;
-  max-width: 600px;
+  max-width: 100%;
   height: auto;
+  display: block;
   justify-content: left;
-  padding-left: 20px;
 }
 
 .hero-description {
