@@ -42,18 +42,24 @@ header {
   height: 50px;
   padding: 5px;
   padding-left: 25px;
-  padding-right: 25px;
+  padding-right: 15px;
 }
 
 .left-group {
   display: flex;
   align-items: center;
-  gap: 1rem; /* space between logo and icons */
+  gap: 0.6rem; /* space between logo and icons */
 }
 
 .social-icons {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.5rem;
+}
+
+@media (min-width: 720px) {
+  .social-icons {
+    gap: 2.5rem;
+  }
 }
 
 .social-icons a {
