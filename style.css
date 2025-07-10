@@ -22,7 +22,7 @@ body {
 
 header {
   background-color: var(--yellow);
-  padding: 0rem;
+  padding: 0.5rem 1rem;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -39,37 +39,10 @@ header {
 }
 
 .logo {
-  height: 50px;
+  height: 55px;
   padding: 5px;
-  padding-left: 25px;
-  padding-right: 15px;
-}
-
-.left-group {
   display: flex;
   align-items: center;
-  gap: 0.6rem; /* space between logo and icons */
-}
-
-.social-icons {
-  display: flex;
-  gap: 0.5rem;
-}
-
-@media (min-width: 720px) {
-  .social-icons {
-    gap: 2.5rem;
-  }
-}
-
-.social-icons a {
-  color: var(--black);
-  font-size: 1.3rem;
-  transition: color 0.2s;
-}
-
-.social-icons a:hover {
-  color: #444;
 }
 
 .menu-toggle {
@@ -78,7 +51,7 @@ header {
   background: none;
   border: none;
   cursor: pointer;
-  padding-right: 35px;
+  padding-right: 10px;
 }
 
 .menu {
@@ -130,6 +103,29 @@ header {
   font-weight: 500;
   color: var(--black);
   line-height: 1.6;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: left;
+  gap: 1rem;
+  margin: 1rem 4rem;
+}
+
+.social-icons a {
+  color: #0154a5;
+  font-size: 1.6rem;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: rgb(16, 136, 255);
+}
+
+@media (min-width: 720px) {
+  .social-icons {
+    gap: 2.5rem;
+  }
 }
 
 .scroll-arrow {
