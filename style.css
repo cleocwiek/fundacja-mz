@@ -10,6 +10,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--white);
@@ -25,6 +29,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Padding on left/right for mobile */
 }
 
 .logo {
@@ -92,6 +102,30 @@ header {
   font-weight: 500;
   color: var(--black);
   line-height: 1.6;
+}
+
+.scroll-arrow {
+  text-align: center;
+  margin: 0.5rem 0;
+  animation: bounce 2s infinite;
+}
+
+.arrow-icon {
+  width: 32px;
+  height: 32px;
+  fill: #000; /* Or var(--black) */
+  cursor: pointer;
+}
+
+/* Optional bounce animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
 }
 
 .projects {
