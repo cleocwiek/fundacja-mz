@@ -1,7 +1,12 @@
 :root {
-  --yellow: #ffda36;
-  --black: #000000;
+  --yellow: #facf34;
+  --black: #212227;
   --white: #f8f7f1;
+  --dark-brown: #463c32;
+  --bright-yellow: #ffe68b;
+  --light-yellow: #fff0c4;
+  --pink: #ea6f91;
+  --blue: #0154a5;
 }
 
 * {
@@ -105,21 +110,53 @@ header {
   line-height: 1.6;
 }
 
+/* Call-to-Action Buttons */
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--blue);
+  color: var(--white);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid var(--blue);
+  width: 100%;
+  max-width: 300px;
+}
+
+.cta-button:hover {
+  background-color: var(--white);
+  color: var(--blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 .social-icons {
   display: flex;
   justify-content: left;
   gap: 1rem;
-  margin: 1rem 4rem;
+  margin: 1rem 2rem;
 }
 
 .social-icons a {
-  color: #0154a5;
+  color: var(--dark-brown);
   font-size: 1.6rem;
   transition: color 0.2s;
 }
 
 .social-icons a:hover {
-  color: rgb(16, 136, 255);
+  color: var(--black);
 }
 
 @media (min-width: 720px) {
@@ -208,6 +245,31 @@ header {
   margin-top: 1rem;
   font-weight: 600;
   color: var(--black);
+  margin-bottom: 0.5rem;
+  min-height: 2.5rem;
+  line-height: 1.4;
+}
+
+.project-button {
+  display: inline-block;
+  background-color: var(--pink);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid var(--pink);
+  margin-top: 0.5rem;
+}
+
+.project-button:hover {
+  background-color: var(--white);
+  color: var(--pink);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media (min-width: 720px) {
@@ -223,6 +285,16 @@ header {
 
   .hero-description p {
     font-size: 1.1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+
+  .cta-button {
+    min-width: 200px;
   }
 }
 
@@ -246,16 +318,129 @@ header {
 }
 
 .section-heading h2 {
-  background-color: #f2a38f;
-  color: black;
+  background-color: var(--bright-yellow);
+  color: var(--black);
   padding: 1rem 1.5rem;
   border-radius: 999px;
-  font-weight: 600;
-  font-size: 2rem;
+  font-weight: 700;
+  font-size: 1.8rem;
   transform: rotate(-4.36deg);
   text-transform: uppercase;
   letter-spacing: 0.7px;
   max-width: 90%;
   text-align: center;
   word-wrap: break-word;
+  display: inline-block;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: var(--yellow);
+  padding: 2rem 1rem 1rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.donation-info p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.bank-account {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.patronite-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  transition: color 0.2s;
+}
+
+.patronite-link:hover {
+  color: #e74c3c;
+}
+
+.contact-info p {
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  transition: color 0.2s;
+}
+
+.email-link:hover {
+  color: var(--pink);
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.footer-social-icons a {
+  color: var(--black);
+  font-size: 1.6rem;
+  transition: color 0.2s;
+}
+
+.footer-social-icons a:hover {
+  color: var(--pink);
+}
+
+.footer-bottom {
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: var(--black);
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .footer {
+    padding: 3rem 2rem 1.5rem 2rem;
+  }
 }
