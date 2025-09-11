@@ -28,18 +28,75 @@ body {
   font-family: "Inter", sans-serif;
   background-color: var(--white);
   color: var(--black);
+  margin-top: 80px;
 }
 
 header {
   background-color: var(--yellow);
-  padding: 0.5rem 1rem;
-  position: sticky;
+  padding: 1rem;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
+}
+
+.logo {
+  position: absolute;
+  left: 1rem;
+}
+
+.menu-toggle {
+  position: absolute;
+  right: 1rem;
+}
+
+.desktop-nav {
+  display: none;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.desktop-nav a {
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.desktop-nav a:hover {
+  color: var(--blue);
+}
+
+@media (min-width: 769px) {
+  .desktop-nav {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+  }
+
+  .logo {
+    position: static;
+  }
+
+  .menu-toggle {
+    position: static;
+  }
 }
 
 .container {
