@@ -548,3 +548,92 @@ header {
     flex: 0 0 calc(25% - 0.75rem); /* ~4 per view on desktop */
   }
 }
+
+/* Trusted organizations section */
+.trusted-section {
+  background: #fff;
+  margin-top: 2rem;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+}
+
+.trusted-heading {
+  display: flex;
+  justify-content: left;
+  padding-left: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.trusted-heading h2 {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  transform: rotate(-3deg);
+  display: inline-block;
+}
+
+.trusted-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.trusted-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.trusted-title {
+  font-weight: 600; /* less bold */
+  color: var(--black);
+  margin-bottom: 0.25rem;
+  font-size: 1rem; /* smaller */
+}
+
+/* Ensure links in titles look like the previous non-link titles */
+.trusted-title a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.trusted-title a:hover {
+  color: var(--blue);
+}
+
+.trusted-meta {
+  color: var(--black);
+  opacity: 0.6; /* less bold/contrast */
+  font-size: 0.85rem; /* smaller */
+  margin-bottom: 0.35rem;
+  font-weight: 400; /* lighter weight */
+}
+
+.trusted-phone {
+  font-weight: 800; /* bolder */
+  font-size: 1.5rem; /* bigger */
+  color: var(--dark-brown);
+}
+
+.trusted-link {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.trusted-link:hover {
+  color: var(--pink);
+}
+
+@media (min-width: 720px) {
+  .trusted-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
