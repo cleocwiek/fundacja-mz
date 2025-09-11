@@ -104,7 +104,7 @@ header {
 }
 
 .hero-description p {
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--black);
   line-height: 1.6;
@@ -252,7 +252,7 @@ header {
 
 .project-button {
   display: inline-block;
-  background-color: var(--pink);
+  background-color: var(--dark-brown);
   color: var(--white);
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -261,13 +261,13 @@ header {
   font-size: 0.8rem;
   text-align: center;
   transition: all 0.3s ease;
-  border: 2px solid var(--pink);
+  border: 2px solid var(--dark-brown);
   margin-top: 0.5rem;
 }
 
 .project-button:hover {
   background-color: var(--white);
-  color: var(--pink);
+  color: var(--dark-brown);
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -284,7 +284,7 @@ header {
   }
 
   .hero-description p {
-    font-size: 1.1rem;
+    font-size: 0.85rem;
   }
 
   .cta-buttons {
@@ -442,5 +442,109 @@ header {
 
   .footer {
     padding: 3rem 2rem 1.5rem 2rem;
+  }
+}
+
+/* Team Section */
+.team-section {
+  background: var(--light-yellow);
+  margin-top: 2rem;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+}
+
+.team-heading {
+  display: flex;
+  justify-content: left;
+  padding-left: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.team-heading h2 {
+  background-color: var(--pink);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  transform: rotate(4.36deg);
+  display: inline-block;
+}
+
+/* Team carousel layout */
+.team-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-track {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.team-card {
+  flex: 0 0 calc(50% - 0.5rem); /* 2 per view on mobile */
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.team-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: inline-block;
+  border: 3px solid var(--white);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team-name {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.team-email {
+  display: inline-block;
+  margin-top: 0.25rem;
+  color: var(--dark-brown);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.team-email:hover {
+  color: var(--pink);
+}
+
+.team-next {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--pink);
+  color: var(--white);
+  border: none;
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+@media (min-width: 720px) {
+  .team-card {
+    flex: 0 0 calc(25% - 0.75rem); /* ~4 per view on desktop */
   }
 }
