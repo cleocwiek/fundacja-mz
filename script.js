@@ -2,11 +2,12 @@ function toggleMenu() {
   document.getElementById("mobileMenu").classList.toggle("open");
 }
 
-// Team carousel: seamless infinite loop
+// Team carousel: seamless infinite loop with touch support and two arrows
 (function () {
   const track = document.getElementById("teamTrack");
+  const prev = document.getElementById("teamPrev");
   const next = document.getElementById("teamNext");
-  if (!track || !next) return;
+  if (!track || !prev || !next) return;
 
   let animating = false;
 
@@ -48,7 +49,111 @@ function toggleMenu() {
     track.addEventListener("transitionend", handleEnd);
   }
 
+  function slidePrev() {
+    if (animating) return;
+    const step = stepSize();
+    if (!step) return;
+    animating = true;
+
+    // move last card to beginning
+    const lastCard = track.lastElementChild;
+    if (lastCard) track.insertBefore(lastCard, track.firstChild);
+
+    // start from -1 step position
+    track.style.transition = "none";
+    track.style.transform = `translateX(-${step}px)`;
+    void track.offsetHeight; // force reflow
+
+    // animate to 0
+    track.style.transition = "transform 0.3s ease";
+    track.style.transform = "translateX(0)";
+
+    const handleEnd = () => {
+      track.removeEventListener("transitionend", handleEnd);
+      animating = false;
+    };
+
+    track.addEventListener("transitionend", handleEnd);
+  }
+
+  // Touch/swipe functionality for mobile
+  let startX = 0;
+  let currentX = 0;
+  let isDragging = false;
+
+  function handleTouchStart(e) {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  }
+
+  function handleTouchMove(e) {
+    if (!isDragging) return;
+    currentX = e.touches[0].clientX;
+    const diffX = startX - currentX;
+
+    // Only allow horizontal swiping
+    if (Math.abs(diffX) > 10) {
+      e.preventDefault();
+    }
+  }
+
+  function handleTouchEnd(e) {
+    if (!isDragging) return;
+    isDragging = false;
+
+    const diffX = startX - currentX;
+    const threshold = 50; // Minimum swipe distance
+
+    if (Math.abs(diffX) > threshold) {
+      if (diffX > 0) {
+        slideNext(); // Swipe left - go to next
+      } else {
+        slidePrev(); // Swipe right - go to previous
+      }
+    }
+  }
+
+  // Mouse drag functionality for desktop
+  function handleMouseDown(e) {
+    startX = e.clientX;
+    isDragging = true;
+    e.preventDefault();
+  }
+
+  function handleMouseMove(e) {
+    if (!isDragging) return;
+    currentX = e.clientX;
+  }
+
+  function handleMouseUp(e) {
+    if (!isDragging) return;
+    isDragging = false;
+
+    const diffX = startX - currentX;
+    const threshold = 50;
+
+    if (Math.abs(diffX) > threshold) {
+      if (diffX > 0) {
+        slideNext(); // Drag left - go to next
+      } else {
+        slidePrev(); // Drag right - go to previous
+      }
+    }
+  }
+
+  // Event listeners
   next.addEventListener("click", slideNext);
+  prev.addEventListener("click", slidePrev);
+
+  // Touch events for mobile
+  track.addEventListener("touchstart", handleTouchStart, { passive: false });
+  track.addEventListener("touchmove", handleTouchMove, { passive: false });
+  track.addEventListener("touchend", handleTouchEnd);
+
+  // Mouse events for desktop (optional)
+  track.addEventListener("mousedown", handleMouseDown);
+  document.addEventListener("mousemove", handleMouseMove);
+  document.addEventListener("mouseup", handleMouseUp);
 
   // keep layout consistent on resize
   window.addEventListener("resize", () => {
@@ -60,7 +165,7 @@ function toggleMenu() {
   });
 })();
 
-// Partners carousel: seamless infinite loop like team section
+// Partners carousel: seamless infinite loop with auto-movement and touch support
 (function () {
   const track = document.getElementById("partnersTrack");
   const prev = document.getElementById("partnersPrev");
@@ -68,6 +173,8 @@ function toggleMenu() {
   if (!track || !prev || !next) return;
 
   let animating = false;
+  let autoMoveInterval;
+  let isPaused = false;
 
   function stepSize() {
     const first = track.querySelector(".partner-item");
@@ -134,8 +241,146 @@ function toggleMenu() {
     track.addEventListener("transitionend", handleEnd);
   }
 
-  next.addEventListener("click", slideNext);
-  prev.addEventListener("click", slidePrev);
+  // Auto-movement functionality
+  function startAutoMove() {
+    autoMoveInterval = setInterval(() => {
+      if (!isPaused && !animating) {
+        slideNext();
+      }
+    }, 3000); // Move every 3 seconds
+  }
+
+  function stopAutoMove() {
+    if (autoMoveInterval) {
+      clearInterval(autoMoveInterval);
+      autoMoveInterval = null;
+    }
+  }
+
+  // Touch/swipe functionality
+  let startX = 0;
+  let currentX = 0;
+  let isDragging = false;
+
+  function handleTouchStart(e) {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+    isPaused = true;
+    stopAutoMove();
+  }
+
+  function handleTouchMove(e) {
+    if (!isDragging) return;
+    currentX = e.touches[0].clientX;
+    const diffX = startX - currentX;
+
+    // Only allow horizontal swiping
+    if (Math.abs(diffX) > 10) {
+      e.preventDefault();
+    }
+  }
+
+  function handleTouchEnd(e) {
+    if (!isDragging) return;
+    isDragging = false;
+
+    const diffX = startX - currentX;
+    const threshold = 50; // Minimum swipe distance
+
+    if (Math.abs(diffX) > threshold) {
+      if (diffX > 0) {
+        slideNext(); // Swipe left - go to next
+      } else {
+        slidePrev(); // Swipe right - go to previous
+      }
+    }
+
+    // Resume auto-movement after a delay
+    setTimeout(() => {
+      isPaused = false;
+      startAutoMove();
+    }, 2000);
+  }
+
+  // Mouse drag functionality for desktop
+  function handleMouseDown(e) {
+    startX = e.clientX;
+    isDragging = true;
+    isPaused = true;
+    stopAutoMove();
+    e.preventDefault();
+  }
+
+  function handleMouseMove(e) {
+    if (!isDragging) return;
+    currentX = e.clientX;
+  }
+
+  function handleMouseUp(e) {
+    if (!isDragging) return;
+    isDragging = false;
+
+    const diffX = startX - currentX;
+    const threshold = 50;
+
+    if (Math.abs(diffX) > threshold) {
+      if (diffX > 0) {
+        slideNext();
+      } else {
+        slidePrev();
+      }
+    }
+
+    setTimeout(() => {
+      isPaused = false;
+      startAutoMove();
+    }, 2000);
+  }
+
+  // Event listeners
+  next.addEventListener("click", () => {
+    isPaused = true;
+    stopAutoMove();
+    slideNext();
+    setTimeout(() => {
+      isPaused = false;
+      startAutoMove();
+    }, 2000);
+  });
+
+  prev.addEventListener("click", () => {
+    isPaused = true;
+    stopAutoMove();
+    slidePrev();
+    setTimeout(() => {
+      isPaused = false;
+      startAutoMove();
+    }, 2000);
+  });
+
+  // Touch events
+  track.addEventListener("touchstart", handleTouchStart, { passive: false });
+  track.addEventListener("touchmove", handleTouchMove, { passive: false });
+  track.addEventListener("touchend", handleTouchEnd);
+
+  // Mouse events for desktop
+  track.addEventListener("mousedown", handleMouseDown);
+  document.addEventListener("mousemove", handleMouseMove);
+  document.addEventListener("mouseup", handleMouseUp);
+
+  // Pause auto-movement on hover
+  track.addEventListener("mouseenter", () => {
+    isPaused = true;
+    stopAutoMove();
+  });
+
+  track.addEventListener("mouseleave", () => {
+    isPaused = false;
+    startAutoMove();
+  });
+
+  // Start auto-movement
+  startAutoMove();
 
   // keep layout consistent on resize
   window.addEventListener("resize", () => {
