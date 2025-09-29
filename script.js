@@ -2,6 +2,29 @@ function toggleMenu() {
   document.getElementById("mobileMenu").classList.toggle("open");
 }
 
+// Close menu when clicking outside
+document.addEventListener("click", function (event) {
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuToggle = document.querySelector(".menu-toggle");
+
+  // Check if menu is open and click is outside menu and toggle button
+  if (
+    mobileMenu.classList.contains("open") &&
+    !mobileMenu.contains(event.target) &&
+    !menuToggle.contains(event.target)
+  ) {
+    mobileMenu.classList.remove("open");
+  }
+});
+
+// Function to open PDF when poster is clicked
+function openPDF() {
+  window.open(
+    "Przewodnik po zaburzeniach. Fundacja Można Zwariować.pdf",
+    "_blank"
+  );
+}
+
 // Team carousel: seamless infinite loop with touch support and two arrows
 (function () {
   const track = document.getElementById("teamTrack");
