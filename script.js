@@ -20,7 +20,7 @@ document.addEventListener("click", function (event) {
 // Function to open PDF when poster is clicked
 function openPDF() {
   window.open(
-    "Przewodnik po zaburzeniach. Fundacja Można Zwariować.pdf",
+    "images/kampania/Przewodnik po zaburzeniach. Fundacja Można Zwariować.pdf",
     "_blank"
   );
 }
