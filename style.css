@@ -48,6 +48,8 @@ header {
 .logo {
   position: absolute;
   left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .desktop-nav {
@@ -83,10 +85,13 @@ header {
   header {
     padding: 0.5rem 1rem;
     justify-content: space-between;
+    align-items: center;
   }
 
   .logo {
     position: static;
+    transform: none;
+    top: auto;
   }
 
   .menu-toggle {
@@ -141,8 +146,8 @@ header {
 }
 
 .menu.open {
-  height: 250px;
-  padding: 1rem 0;
+  height: 300px;
+  padding: 1rem 0 2rem 0;
 }
 
 .menu a {
@@ -322,13 +327,15 @@ header {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
-.project p {
+.project h3 {
   margin-top: 1rem;
   font-weight: 600;
   color: var(--black);
-  margin-bottom: 0.5rem;
-  min-height: 4.5rem;
+  margin-bottom: 0.25rem;
+  min-height: 3rem;
   line-height: 1.4;
+  font-size: 1.1rem;
+  text-align: left;
 }
 
 .project-button {
@@ -831,8 +838,177 @@ header {
 }
 
 @media (max-width: 768px) {
+  .section-heading {
+    padding-left: 1rem;
+  }
+
+  .section-heading h2 {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.2rem;
+    max-width: calc(100vw - 2rem);
+    word-wrap: break-word;
+  }
+
+  .trusted-heading {
+    padding-left: 1rem;
+  }
+
+  .trusted-heading h2 {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.2rem;
+    max-width: calc(100vw - 2rem);
+    word-wrap: break-word;
+  }
+
+  .team-heading {
+    padding-left: 1rem;
+  }
+
+  .team-heading h2 {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.2rem;
+    max-width: calc(100vw - 2rem);
+    word-wrap: break-word;
+  }
+
+  .downloads-heading {
+    padding-left: 1rem;
+  }
+
   .downloads-heading h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    padding: 0.8rem 1.2rem;
+    max-width: calc(100vw - 2rem);
+    word-wrap: break-word;
+  }
+}
+
+/* Fundacja page styles */
+.fundacja-hero {
+  background: var(--white);
+  padding: 4rem 1rem;
+  margin-top: 80px;
+}
+
+.fundacja-hero-content {
+  display: flex;
+  justify-content: left;
+  padding-left: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.fundacja-hero-content h1 {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  transform: rotate(-3deg);
+  display: inline-block;
+  margin: 0;
+}
+
+.fundacja-content {
+  padding: 4rem 1rem;
+  background: #f8f7f1;
+}
+
+.fundacja-text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fundacja-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+}
+
+.fundacja-documents {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.document-category {
+  margin-bottom: 3rem;
+}
+
+.document-category h3 {
+  background-color: var(--pink);
+  color: var(--white);
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transform: rotate(-2deg);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.document-category:first-child h3 {
+  background-color: var(--blue);
+}
+
+.document-category:nth-child(2) h3 {
+  transform: rotate(2deg);
+}
+
+.document-category:nth-child(3) h3 {
+  background-color: var(--bright-yellow);
+  color: var(--black);
+}
+
+.document-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.document-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.document-list li::before {
+  content: "•";
+  color: var(--blue);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+.document-list a {
+  color: var(--black);
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.document-list a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .fundacja-hero-content {
+    padding-left: 1rem;
+  }
+
+  .fundacja-hero-content h1 {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.2rem;
+    max-width: calc(100vw - 2rem);
+    word-wrap: break-word;
   }
 }
 

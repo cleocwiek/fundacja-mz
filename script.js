@@ -2,6 +2,10 @@ function toggleMenu() {
   document.getElementById("mobileMenu").classList.toggle("open");
 }
 
+function closeMenu() {
+  document.getElementById("mobileMenu").classList.remove("open");
+}
+
 // Close menu when clicking outside
 document.addEventListener("click", function (event) {
   const mobileMenu = document.getElementById("mobileMenu");
@@ -15,6 +19,14 @@ document.addEventListener("click", function (event) {
   ) {
     mobileMenu.classList.remove("open");
   }
+});
+
+// Close menu when clicking on menu links
+document.addEventListener("DOMContentLoaded", function () {
+  const menuLinks = document.querySelectorAll(".menu a");
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
 });
 
 // Function to open PDF when poster is clicked
