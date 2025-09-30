@@ -210,10 +210,10 @@ header {
   background-color: var(--blue);
   color: var(--white);
   text-decoration: none;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.2rem;
   border-radius: 999px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-align: center;
   transition: all 0.3s ease;
   border: 2px solid var(--blue);
