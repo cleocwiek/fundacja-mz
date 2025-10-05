@@ -1049,6 +1049,148 @@ body:has(.offternoon-hero) a {
   color: var(--dark-brown);
 }
 
+.mamtowgrupie-hero {
+  padding: 1rem 1rem;
+  text-align: center;
+  background: #ffdc38;
+}
+
+.mamtowgrupie-logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.mamtowgrupie-subtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.mamtowgrupie-left .section-heading h2 {
+  background-color: var(--pink);
+  color: var(--white);
+  font-size: 1.2rem;
+  margin: 1rem 0 1rem 0;
+  text-align: left;
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.mamtowgrupie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.mamtowgrupie-left {
+  flex: 1;
+}
+
+.mamtowgrupie-right {
+  flex: 1;
+}
+
+.mamtowgrupie-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+}
+
+.mamtowgrupie-cta {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: var(--bright-yellow);
+  border-radius: 12px;
+}
+
+.mamtowgrupie-cta p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--black);
+  margin: 0;
+}
+
+.mamtowgrupie-form-link {
+  color: var(--black);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.mamtowgrupie-form-link:hover {
+  color: var(--pink);
+}
+
+.mamtowgrupie-meeting-header {
+  margin: 5rem auto 1rem auto;
+}
+
+.mamtowgrupie-meeting-header h3 {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 2rem 2rem !important;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transform: rotate(-2deg);
+  text-align: center;
+  margin: 2rem 0 2rem 0 !important;
+}
+
+.mamtowgrupie-pink-header {
+  margin: 1rem auto 1rem auto;
+}
+
+.mamtowgrupie-pink-header h3 {
+  background-color: var(--pink);
+  color: var(--white);
+  padding: 2rem 2rem !important;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transform: rotate(-2deg);
+  text-align: center;
+  margin: 2rem 0 2rem 0 !important;
+}
+
+.mamtowgrupie-goals-header {
+  margin: 5rem auto 1rem auto;
+}
+
+.mamtowgrupie-goals-header h3 {
+  background-color: var(--bright-yellow);
+  color: var(--black);
+  padding: 2rem 2rem !important;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transform: rotate(2deg);
+  text-align: center;
+  margin: 2rem 0 2rem 0 !important;
+}
+
 .offternoon-hero {
   padding: 4rem 1rem;
   text-align: center;
@@ -1229,6 +1371,15 @@ body:has(.offternoon-hero) a {
   .offternoon-description p {
     font-size: 1rem;
   }
+
+  .mamtowgrupie-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .mamtowgrupie-content p {
+    text-align: left;
+  }
 }
 
 /* Kampania page styles */
@@ -1379,7 +1530,7 @@ body:has(.offternoon-hero) a {
 }
 
 .kampania-partners h2 {
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--black);
   margin-bottom: 3rem;
@@ -1398,7 +1549,7 @@ body:has(.offternoon-hero) a {
 }
 
 .kampania-partner-logo img {
-  max-height: 80px;
+  max-height: 40px;
   width: auto;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
@@ -1408,13 +1559,21 @@ body:has(.offternoon-hero) a {
   filter: grayscale(0%);
 }
 
+.wellbee-logo img {
+  max-height: 32px !important;
+}
+
 @media (max-width: 768px) {
   .kampania-partners-logos {
     gap: 2rem;
   }
 
   .kampania-partner-logo img {
-    max-height: 60px;
+    max-height: 30px;
+  }
+
+  .wellbee-logo img {
+    max-height: 24px !important;
   }
 }
 
