@@ -1380,6 +1380,32 @@ body:has(.offternoon-hero) a {
   .mamtowgrupie-content p {
     text-align: left;
   }
+
+  .mamtowgrupie-content .instagram-embed {
+    width: 330px !important;
+    height: 450px !important;
+    max-width: 330px !important;
+  }
+
+  @media (min-width: 769px) {
+    .mamtowgrupie-content .instagram-embed {
+      width: 330px !important;
+      height: 450px !important;
+      max-width: 330px !important;
+    }
+  }
+
+  .mamtowgrupie-content .offternoon-instagram .instagram-embed {
+    width: 330px !important;
+    height: 450px !important;
+    max-width: 330px !important;
+  }
+
+  .mamtowgrupie-content iframe[src*="instagram.com"] {
+    width: 330px !important;
+    height: 450px !important;
+    max-width: 330px !important;
+  }
 }
 
 /* Kampania page styles */
