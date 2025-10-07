@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Function to open PDF when poster is clicked
 function openPDF() {
   window.open(
-    "https://drive.google.com/file/d/1DtHd0ZbCK-c9pi-mNwdG3NxSvFWJOGLy/view?usp=drive_link",
+    "https://drive.google.com/file/d/1vzmisI36SeDR1Ib9UPnWpc9Qx49pHuq4/view?usp=sharing",
     "_blank"
   );
 }
