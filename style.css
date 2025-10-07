@@ -71,7 +71,7 @@ header {
   color: var(--blue);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .desktop-nav {
     display: flex;
   }
@@ -145,6 +145,7 @@ header {
   border: none;
   cursor: pointer;
   padding-right: 10px;
+  margin-left: auto;
 }
 
 .menu {
@@ -1815,4 +1816,78 @@ body:has(.offternoon-hero) a {
 
 .partners-arrow:hover {
   opacity: 0.8;
+}
+
+/* Pierwsza (Samo)Pomoc page styles */
+.pierwszasamopomoc-hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.pierwszasamopomoc-title {
+  color: var(--blue);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+.pierwszasamopomoc-subtitle {
+  color: var(--blue);
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.pierwszasamopomoc-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: left;
+}
+
+.pierwszasamopomoc-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+}
+
+.pierwszasamopomoc-content p a {
+  color: var(--black);
+  text-decoration: underline;
+}
+
+.pierwszasamopomoc-content p a:hover {
+  opacity: 0.7;
+}
+
+.pierwszasamopomoc-image {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.pierwszasamopomoc-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pierwszasamopomoc-cta {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .pierwszasamopomoc-title {
+    font-size: 2rem;
+  }
+
+  .pierwszasamopomoc-subtitle {
+    font-size: 1.2rem;
+  }
 }
