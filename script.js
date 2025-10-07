@@ -200,6 +200,10 @@ function openPDF() {
   });
 })();
 
+// Instagram grid will be embedded via widget (Behold.so or Juicer.io)
+// These tools automatically fetch and display Instagram posts in a grid
+// No custom JavaScript needed - the widget handles everything
+
 // Partners carousel: seamless infinite loop with auto-movement and touch support
 (function () {
   const track = document.getElementById("partnersTrack");

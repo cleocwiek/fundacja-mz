@@ -672,6 +672,52 @@ header {
   }
 }
 
+/* Instagram section */
+.instagram-section {
+  background: var(--light-yellow);
+  margin-top: 2rem;
+  padding: 2rem 1rem 2.5rem;
+  border-radius: 12px;
+}
+
+.instagram-heading {
+  display: flex;
+  justify-content: left;
+  padding-left: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.instagram-heading h2 {
+  background-color: var(--pink);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  transform: rotate(4deg);
+  display: inline-block;
+}
+
+/* Instagram grid container */
+.instagram-grid-container {
+  padding: 0 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Behold widget styling */
+behold-widget {
+  display: block;
+  width: 100%;
+}
+
+/* Fix Behold popup/modal if it appears behind header */
+.behold-modal {
+  z-index: 9999 !important;
+}
+
 /* Trusted organizations section */
 .trusted-section {
   background: #fff;
@@ -896,6 +942,17 @@ header {
   }
 
   .downloads-heading h2 {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.2rem;
+    max-width: calc(100vw - 2rem);
+    word-wrap: break-word;
+  }
+
+  .instagram-heading {
+    padding-left: 1rem;
+  }
+
+  .instagram-heading h2 {
     font-size: 1.4rem;
     padding: 0.8rem 1.2rem;
     max-width: calc(100vw - 2rem);
