@@ -314,6 +314,13 @@ header {
   aspect-ratio: 3.5 / 4;
   overflow: hidden;
   border-radius: 12px;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover {
+  transform: scale(1.02);
 }
 
 .image-wrapper img {
@@ -1111,6 +1118,7 @@ body:has(.offternoon-hero) a {
   padding: 1rem 1rem;
   text-align: center;
   background: #ffdc38;
+  border-radius: 12px;
 }
 
 .mamtowgrupie-logo {
@@ -2127,14 +2135,18 @@ body:has(.offternoon-hero) a {
 }
 
 .takecareoffyourself-downloads .cta-button {
-  max-width: 400px;
+  max-width: 500px;
   width: 100%;
   text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
 }
 
 .cta-button-custom-pink {
   background-color: #ea6f91;
   border: 2px solid #ea6f91;
+  color: white !important;
 }
 
 .cta-button-custom-pink:hover {
