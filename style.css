@@ -1884,10 +1884,61 @@ body:has(.offternoon-hero) a {
   height: auto;
 }
 
+.pierwszasamopomoc-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.step-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.step-item img {
+  max-width: 100px;
+  min-width: 100px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.step-item-text {
+  flex: 1;
+}
+
+.step-item h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.step-item p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--dark-brown);
+  margin: 0;
+}
+
 .pierwszasamopomoc-cta {
   text-align: center;
   margin-top: 3rem;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .pierwszasamopomoc-steps {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
