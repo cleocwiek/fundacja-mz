@@ -430,3 +430,64 @@ function openPDF() {
     track.style.transition = "transform 0.3s ease";
   });
 })();
+
+// Digital Hygiene Quiz
+function calculateQuizResult() {
+  const form = document.getElementById("digitalHygieneQuiz");
+  const resultDiv = document.getElementById("quizResult");
+
+  // Count "yes" answers
+  let yesCount = 0;
+  for (let i = 1; i <= 6; i++) {
+    const answer = form.querySelector(`input[name="q${i}"]:checked`);
+    if (answer && answer.value === "yes") {
+      yesCount++;
+    }
+  }
+
+  // Check if all questions are answered
+  let allAnswered = true;
+  for (let i = 1; i <= 6; i++) {
+    const answer = form.querySelector(`input[name="q${i}"]:checked`);
+    if (!answer) {
+      allAnswered = false;
+      break;
+    }
+  }
+
+  if (!allAnswered) {
+    resultDiv.innerHTML = "Proszę odpowiedzieć na wszystkie pytania.";
+    resultDiv.style.display = "block";
+    resultDiv.style.backgroundColor = "#ffebee";
+    return;
+  }
+
+  // Determine result based on yes count
+  let resultText = "";
+  const guideLink =
+    '<a href="https://drive.google.com/file/d/1uewqJsJp4NoGZCtAJEx8et4A74IIZWDT/view?usp=sharing" target="_blank" style="color: var(--pink); text-decoration: underline; font-weight: 700;">PORADNIK O HIGIENIE CYFROWEJ W PRAKTYCE</a>';
+
+  if (yesCount >= 4) {
+    resultText =
+      "Wygląda na to, że możesz mieć problem z nadużywaniem telefonu. Jeśli chcesz dowiedzieć się więcej – przeczytaj nasz " +
+      guideLink +
+      "!";
+  } else if (yesCount === 3) {
+    resultText =
+      "Stosujesz pewne zasady higieny cyfrowej, ale zawsze może być lepiej. Jeśli chcesz dowiedzieć się więcej – przeczytaj nasz " +
+      guideLink +
+      "!";
+  } else {
+    resultText =
+      "Zdaje się, że całkiem dobrze radzisz sobie w cyfrowym świecie! Jeśli chcesz dowiedzieć się więcej – przeczytaj nasz " +
+      guideLink +
+      "!";
+  }
+
+  resultDiv.innerHTML = resultText;
+  resultDiv.style.display = "block";
+  resultDiv.style.backgroundColor = "white";
+
+  // Scroll to result
+  resultDiv.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}

@@ -1891,3 +1891,276 @@ body:has(.offternoon-hero) a {
     font-size: 1.2rem;
   }
 }
+
+/* Take Care OFF Yourself page styles */
+.takecareoffyourself-hero {
+  background: white;
+  padding: 2rem 0;
+}
+
+.takecareoffyourself-logo {
+  text-align: center;
+  margin: 2rem 0 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.takecareoffyourself-logo img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .takecareoffyourself-logo img {
+    max-width: 600px;
+  }
+}
+
+.takecareoffyourself-content {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  align-items: flex-start;
+}
+
+.takecareoffyourself-left {
+  flex: 1;
+}
+
+.takecareoffyourself-right {
+  flex: 1;
+  padding-top: 3rem;
+}
+
+.takecareoffyourself-image {
+  text-align: center;
+}
+
+.takecareoffyourself-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.takecareoffyourself-right p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--dark-brown);
+  margin-bottom: 1.5rem;
+}
+
+.takecareoffyourself-right h3 {
+  background-color: var(--yellow);
+  color: var(--black);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  display: block;
+  margin: 1.5rem 0;
+  line-height: 1.4;
+}
+
+/* Take Care OFF Yourself Quiz */
+.takecareoffyourself-quiz {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+}
+
+.quiz-wrapper {
+  background-color: #fff0c4;
+  padding: 2rem 2rem;
+  border-radius: 12px;
+  max-width: 650px;
+  width: 100%;
+  text-align: center;
+}
+
+.takecareoffyourself-quiz h2 {
+  background-color: var(--pink);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  transform: rotate(4deg);
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.quiz-question {
+  padding: 0.25rem 0;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.quiz-question p {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.quiz-options {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.quiz-options label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--dark-brown);
+  cursor: pointer;
+  border: 2px solid var(--dark-brown);
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  background: transparent;
+  min-width: 60px;
+}
+
+.quiz-options label:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.quiz-options input[type="radio"] {
+  display: none;
+}
+
+.quiz-options input[type="radio"]:checked + label {
+  background: var(--pink);
+  color: white;
+  border-color: var(--pink);
+}
+
+.quiz-submit {
+  background-color: var(--blue);
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: opacity 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quiz-submit:hover {
+  opacity: 0.9;
+}
+
+.quiz-result {
+  background: white;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--black);
+  line-height: 1.6;
+}
+
+/* Take Care OFF Yourself Tips Section */
+.takecareoffyourself-tips {
+  padding: 3rem 1rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.takecareoffyourself-tips h2 {
+  background-color: var(--bright-yellow);
+  color: var(--black);
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  transform: rotate(-4.36deg);
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.tips-list {
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.tips-list h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--dark-brown);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.takecareoffyourself-downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 3rem;
+  align-items: center;
+}
+
+.takecareoffyourself-downloads .cta-button {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.cta-button-custom-pink {
+  background-color: #ea6f91;
+  border: 2px solid #ea6f91;
+}
+
+.cta-button-custom-pink:hover {
+  background-color: white;
+  color: #ea6f91;
+  border: 2px solid #ea6f91;
+}
+
+.cta-button-custom-pink:active {
+  border: 2px solid #ea6f91;
+}
+
+@media (max-width: 768px) {
+  .takecareoffyourself-content {
+    flex-direction: column;
+  }
+
+  .quiz-options {
+    gap: 1rem;
+  }
+
+  .takecareoffyourself-tips h2 {
+    font-size: 1.5rem;
+  }
+
+  .tips-list h3 {
+    font-size: 1rem;
+  }
+}
