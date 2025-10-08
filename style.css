@@ -257,13 +257,13 @@ header {
 }
 
 .social-icons a {
-  color: var(--dark-brown);
+  color: var(--black);
   font-size: 1.6rem;
   transition: color 0.2s;
 }
 
 .social-icons a:hover {
-  color: var(--black);
+  color: var(--pink);
 }
 
 @media (min-width: 720px) {
